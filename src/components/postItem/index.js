@@ -2,11 +2,11 @@ import React from 'react';
 
 import {Container, Title, ButtonsImg, ButtonImg} from './styled'
 
-export default () => {
+export default ({data}) => {
     return (
         <>
             <Container>
-                <Title>Titulo de teste</Title>
+                <Title>{data.title}</Title>
 
                 <ButtonsImg>
                     <ButtonImg src="/assets/EditNote.svg" />
