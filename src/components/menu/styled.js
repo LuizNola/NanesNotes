@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     height: 100vh;
-    width: 20%;
+    max-width: 20%;
+
     background-color: #009886;
 
-    overflow: scroll;
+    
 `
 
 export const Logo = styled.img``
@@ -18,7 +19,16 @@ export const PostButtons = styled.div`
     display: flex;
     justify-content: space-between;
 
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+`
+
+export const ItemList = styled.div`
+    overflow: scroll;
+    height: 68vh;
+
+    ::-webkit-scrollbar {
+            width: 0px;
+    }
 `
 
 export const PostButton = styled.button`

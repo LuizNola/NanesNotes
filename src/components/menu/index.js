@@ -1,6 +1,8 @@
 import React from 'react';
 
-import {Container, Logo, PostList, PostButtons, PostButtonImg} from './styled'
+import {Container, Logo, PostList, PostButtons, PostButtonImg, ItemList} from './styled'
+
+import PostItem from '../postItem'
 
 export default () =>{
     return (
@@ -15,7 +17,16 @@ export default () =>{
                         <PostButtonImg src="/assets/searchNote.svg"/>
                     </PostButtons>
 
+                <ItemList>
                     <PostItem/>
+                    <PostItem/>
+                    <PostItem/>
+                    <PostItem/>
+                    <PostItem/>
+                    <PostItem/>
+                    <PostItem/>
+                    <PostItem/>
+                </ItemList>
                 </PostList>
             </Container> 
         </>

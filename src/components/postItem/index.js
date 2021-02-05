@@ -1,9 +1,18 @@
 import React from 'react';
 
-export default () =>{
+import {Container, Title, ButtonsImg, ButtonImg} from './styled'
+
+export default () => {
     return (
         <>
-            oi
+            <Container>
+                <Title>Titulo de teste</Title>
+
+                <ButtonsImg>
+                    <ButtonImg src="/assets/EditNote.svg" />
+                    <ButtonImg src="/assets/trash.svg" />
+                </ButtonsImg>
+            </Container>
         </>
     )
 }
