@@ -12,12 +12,11 @@ export default () =>{
     const getNotes = async () => {
         const notesList = await api.getNotes();
         setNotes(notesList);
-        console.log(notesList);
     }
 
     useEffect(() =>{
         getNotes();
-    },[])
+    },[notes])
    
     return (
 

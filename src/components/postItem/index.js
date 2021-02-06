@@ -1,8 +1,13 @@
 import React from 'react';
 
 import {Container, Title, ButtonsImg, ButtonImg} from './styled'
+import api from '../../api'
 
 export default ({data}) => {
+
+    const handleClickTrash = () => {
+        api.deleteNote(data.id)
+    }
     return (
         <>
             <Container>
@@ -10,7 +15,7 @@ export default ({data}) => {
 
                 <ButtonsImg>
                     <ButtonImg src="/assets/EditNote.svg" />
-                    <ButtonImg src="/assets/trash.svg" />
+                    <ButtonImg onClick={handleClickTrash} src="/assets/trash.svg" />
                 </ButtonsImg>
             </Container>
         </>

@@ -10,6 +10,12 @@
 
     getNotes: async () => {
         let {data: json} = await api.get('/notes')
+        console.log(json)
         return json.result
+    },
+
+    deleteNote: async (id) => {
+        let {data: json} = await api.delete('/note/' + id)
+        return json;
     }
  }
