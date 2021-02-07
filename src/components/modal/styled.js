@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    display: flex;
+    display: ${props => props.active == true ? 'flex' : 'none'};
     align-items: center;
     justify-content: center;
     position: absolute;

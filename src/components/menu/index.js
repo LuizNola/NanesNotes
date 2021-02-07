@@ -10,10 +10,15 @@ import Modal from '../modal'
 export default () =>{
 
     const [notes, setNotes] = useState([]);
+    const [activeModal, setActiveModal] = useState(false)
 
     const getNotes = async () => {
         const notesList = await api.getNotes();
         setNotes(notesList);
+    }
+
+    const HandleClickNewNote = (e) => {
+        setActiveModal(true);
     }
 
     useEffect(() =>{
@@ -24,13 +29,13 @@ export default () =>{
 
         <>
             <Container> 
-            <Modal/>
+            <Modal active={activeModal} setActiveModal={setActiveModal}/>
                 <Logo src="/assets/logo.svg"/>
 
                 <PostList>
 
                     <PostButtons>
-                        <PostButtonImg src="/assets/addNote.svg"/>
+                        <PostButtonImg onClick = {HandleClickNewNote} src="/assets/addNote.svg"/>
                     </PostButtons>
 
                 <ItemList>
