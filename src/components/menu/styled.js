@@ -31,8 +31,9 @@ export const ItemList = styled.div`
     }
 `
 
-export const PostButton = styled.button`
-    
-`
 
-export const PostButtonImg = styled.img``
+
+export const PostButtonImg = styled.img`
+
+cursor: pointer;
+`

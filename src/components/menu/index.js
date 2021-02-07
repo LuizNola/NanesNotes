@@ -4,6 +4,8 @@ import {Container, Logo, PostList, PostButtons, PostButtonImg, ItemList} from '.
 import api from '../../api'
 
 import PostItem from '../postItem'
+import Modal from '../modal'
+
 
 export default () =>{
 
@@ -22,13 +24,13 @@ export default () =>{
 
         <>
             <Container> 
+            <Modal/>
                 <Logo src="/assets/logo.svg"/>
 
                 <PostList>
 
                     <PostButtons>
                         <PostButtonImg src="/assets/addNote.svg"/>
-                        <PostButtonImg src="/assets/searchNote.svg"/>
                     </PostButtons>
 
                 <ItemList>

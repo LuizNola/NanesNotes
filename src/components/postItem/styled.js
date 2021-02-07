@@ -14,6 +14,8 @@ export const Container = styled.div`
     width: 238px;
     height:55px;
 
+    transition: all ease 0.2s;
+
 `
 
 export const Title = styled.div`
