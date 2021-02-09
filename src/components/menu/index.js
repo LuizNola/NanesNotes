@@ -17,13 +17,14 @@ export default () =>{
         setNotes(notesList);
     }
 
+
     const HandleClickNewNote = (e) => {
         setActiveModal(true);
     }
 
     useEffect(() =>{
         getNotes();
-    },[notes])
+    },[])
    
     return (
 
