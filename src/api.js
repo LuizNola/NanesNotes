@@ -18,7 +18,6 @@
     },
 
     addNote: async (title, body) => {
-        console.log(title +" "+ body)
         let { data: json }= await api.post('/note', {title, body})
         
         return json;
