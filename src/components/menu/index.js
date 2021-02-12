@@ -7,15 +7,17 @@ import PostItem from '../postItem'
 import Modal from '../modal'
 
 
-export default () =>{
+export default ({ activesPosts, setActivePosts}) =>{
 
     const [notes, setNotes] = useState([]);
     const [activeModal, setActiveModal] = useState(false)
+    
 
     const getNotes = async () => {
         const notesList = await api.getNotes();
         setNotes(notesList);
     }
+
 
     const HandleClickNewNote = (e) => {
         setActiveModal(true);
@@ -23,7 +25,7 @@ export default () =>{
 
     useEffect(() =>{
         getNotes();
-    },[notes])
+    },[])
    
     return (
 
@@ -40,7 +42,7 @@ export default () =>{
 
                 <ItemList>
                 {notes.map((item, index)=>(
-                        <PostItem key={index} data={item}/>
+                        <PostItem key={index} data={item} actives={activesPosts} setActives={setActivePosts}/>
                     ))}
                     
                 </ItemList>

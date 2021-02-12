@@ -20,7 +20,7 @@ export const Modal = styled.div`
     height: 550px;
 `
 
-export const TitleArea = styled.div`
+export const TitleArea = styled.label`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +38,7 @@ export const TitleArea = styled.div`
     }
 `
 
-export const BodyArea = styled.div`
+export const BodyArea = styled.label`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,7 +57,7 @@ export const BodyArea = styled.div`
         resize: none;
     }
 `
-export const PostButton = styled.button`
+export const PostButton = styled.input`
     width: 84px;
     height: 50px;
 
