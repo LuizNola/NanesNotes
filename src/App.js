@@ -17,8 +17,10 @@ function App() {
     <Container>
       <Menu activesPosts={activesPosts} setActivePosts={setActivePosts}/>
 
-
-      <PostIt/>
+    {activesPosts.map(
+    (item,index) =>(<PostIt data={item} key={index}/>)
+    )}
+      
     </Container>
     </>
   );

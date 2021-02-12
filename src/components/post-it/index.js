@@ -2,18 +2,18 @@ import React from 'react';
 import { Container, PostIt, Title, Body } from './styled'
 
 
-export default () =>{
+export default ({data}) =>{
+    console.log(data)
     return (
         <>
             <Container>
                 <PostIt>
-                    <Title>
-                        titulo de teste
+                    <Title>         
+                        {data.title}
                     </Title>
                     <Body>
-                        corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste 
-                        corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste corpo de teste 
-
+                        {data.body}
+                        a
                     </Body>
                 </PostIt>
             </Container>
