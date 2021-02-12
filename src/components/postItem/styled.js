@@ -20,6 +20,7 @@ export const Container = styled.div`
 
 export const Title = styled.div`
     font-size: 24px;
+    cursor: pointer;
 `
 
 export const ButtonsImg = styled.div`
