@@ -10,18 +10,17 @@ export const PostIt = styled.div`
     flex-direction: column;
     align-items: center;
 
-    width: 270px;
-    height: 250px;
+    width: 250px;
+    height: 230px;
 
     background: linear-gradient(180deg, rgba(174,255,136,0.6) 20%, rgba(174,255,136,1) 57%);
-
+    
     cursor: grab;
 
     ${props=>props.isDragging && `
         border: 2px dashed black;
-        background: linear-gradient(180deg, rgba(174,255,136,0.1) 20%, rgba(174,255,136,0.3) 57%)
-
-       
+        background: linear-gradient(180deg, rgba(174,255,136,0.1) 20%, rgba(174,255,136,0.3) 57%)    
+        box-shadow: none;
     `}
 `
 

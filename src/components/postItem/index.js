@@ -10,11 +10,15 @@ export default ({data, actives, setActives }) => {
     }
 
     const handleClickContainer = () => {
-        setActives([...actives, {
-            title: data.title,
-            body: data.body
-        }])
+        if(actives.map((i)=>i.id).indexOf(data.id) == -1){
+            setActives([...actives, {
+                id: data.id,
+                title: data.title,
+                body: data.body
+        }]);
     }
+    
+}
     return (
         <>
             <Container>
