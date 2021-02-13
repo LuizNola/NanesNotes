@@ -1,5 +1,8 @@
 import React, { useState }from 'react';
 
+import {HTML5Backend} from 'react-dnd-html5-backend'
+import { DndProvider } from 'react-dnd'
+
 import {Container} from './appStyled'
 
 import Menu from './components/menu'
@@ -13,7 +16,7 @@ function App() {
 
 
   return (
-    <>
+    <DndProvider backend={HTML5Backend}>
     <Container>
       <Menu activesPosts={activesPosts} setActivePosts={setActivePosts}/>
 
@@ -22,7 +25,7 @@ function App() {
     )}
       
     </Container>
-    </>
+    </DndProvider>
   );
 }
 
