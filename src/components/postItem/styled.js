@@ -5,7 +5,7 @@ export const Container = styled.div`
     justify-content:space-between;
     align-items:center;
 
-    background-color: #fff;
+    background-color: ${props => props.active ? '#aeff88' : '#fff'};
     border: 1px solid #000;
 
     padding: 12px 5px;

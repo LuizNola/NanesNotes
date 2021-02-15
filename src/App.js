@@ -24,7 +24,8 @@ function App() {
 
       <PostArea activesPosts={activesPosts} 
        activesDonePosts={activesDonePosts}
-       setActiveDonePosts={setActiveDonePosts}/>
+       setActiveDonePosts={setActiveDonePosts}
+       setActivePosts={setActivePosts}/>
     
 
     </Container>
