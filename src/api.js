@@ -8,7 +8,6 @@
 
     getNotes: async () => {
         let { data: json } = await api.get('/notes')
-        console.log(json)
         return json.result
     },
 

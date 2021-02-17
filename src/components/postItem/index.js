@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 
+import immer from 'immer'
+
 import { Container, Title, ButtonsImg, ButtonImg } from './styled'
 import api from '../../api'
 
@@ -19,23 +21,28 @@ export default ({ data, actives, setActives }) => {
                 title: data.title,
                 body: data.body
             }]);
+            setActive(!active)
+
         }else{
-            console.log(actives)
-            let newActives = actives
-            newActives.splice(newActives.indexOf(data.id), 1)
-            setActives([])
-            setActives(newActives)
-            console.log(actives)
+           
+            for(let i=0; i<actives.length; i++){
+                if(actives[i].id == data.id){
+                    setActives(immer(actives, draft => {
+                        draft.splice(i, 1)
+                    }))
+                }
+            }
+
+            setActive(!active)
         }
     }
 
     const handleActiveClick = () => {
-        setActive(!active)
     }
 
     return (
         <>
-            <Container active={active} onClick={handleActiveClick}>
+            <Container active={active} >
                 <Title onClick={handleClickContainer}>{data.title}</Title>
 
                 <ButtonsImg>
