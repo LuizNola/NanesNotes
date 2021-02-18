@@ -5,7 +5,7 @@ import immer from 'immer'
 import { Container, Title, ButtonsImg, ButtonImg } from './styled'
 import api from '../../api'
 
-export default ({ data, actives, setActives }) => {
+export default ({ data, actives, setActives, setMode, setActiveModal,setIdForModal }) => {
 
 
     const [ active, setActive ] = useState(false)
@@ -32,12 +32,14 @@ export default ({ data, actives, setActives }) => {
                     }))
                 }
             }
-
             setActive(!active)
         }
     }
 
-    const handleActiveClick = () => {
+    const handleEditClick = () => {
+        setIdForModal(data.id)
+        setMode(false)
+        setActiveModal(true)
     }
 
     return (
@@ -46,7 +48,7 @@ export default ({ data, actives, setActives }) => {
                 <Title onClick={handleClickContainer}>{data.title}</Title>
 
                 <ButtonsImg>
-                    <ButtonImg src="/assets/EditNote.svg" />
+                    <ButtonImg onClick={handleEditClick} src="/assets/EditNote.svg" />
                     <ButtonImg onClick={handleClickTrash} src="/assets/trash.svg" />
                 </ButtonsImg>
             </Container>

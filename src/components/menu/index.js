@@ -10,8 +10,10 @@ import Modal from '../modal'
 export default ({ activesPosts, setActivePosts}) =>{
 
     const [notes, setNotes] = useState([]);
-    const [activeModal, setActiveModal] = useState(false)
     
+    const [activeModal, setActiveModal] = useState(false)
+    const [mode, setMode] = useState(false)
+    const [idForModal, setIdForModal] = useState(0)
 
     const getNotes = async () => {
         const notesList = await api.getNotes();
@@ -20,6 +22,7 @@ export default ({ activesPosts, setActivePosts}) =>{
 
 
     const HandleClickNewNote = (e) => {
+        setMode(true)
         setActiveModal(true);
     }
 
@@ -31,7 +34,12 @@ export default ({ activesPosts, setActivePosts}) =>{
 
         <>
             <Container> 
-            <Modal active={activeModal} setActiveModal={setActiveModal}/>
+            <Modal 
+            active={activeModal} 
+            setActiveModal={setActiveModal} 
+            mode={mode}
+            id={idForModal}
+            />
                 <Logo src="/assets/logo.svg"/>
 
                 <PostList>
@@ -42,7 +50,14 @@ export default ({ activesPosts, setActivePosts}) =>{
 
                 <ItemList>
                 {notes.map((item, index)=>(
-                        <PostItem key={index} data={item} actives={activesPosts} setActives={setActivePosts}/>
+                        <PostItem 
+                        setIdForModal={setIdForModal}
+                        setMode={setMode} 
+                        setActiveModal={setActiveModal} 
+                        key={index} 
+                        data={item} 
+                        actives={activesPosts} 
+                        setActives={setActivePosts}/>
                     ))}
                     
                 </ItemList>
