@@ -1,8 +1,7 @@
  import axios from 'axios';
 
  const api = axios.create({
-     baseURL:  'http://localhost:3001/api',
-     headers: {'Content-Type': 'x-www-form-urlencoded' }
+     baseURL:  'http://localhost:3001/api'
  })
  
  export default {
@@ -18,7 +17,8 @@
     },
 
     addNote: async (title, body) => {
-       // let { data: json }= await api.post('/note', {title, body})
+        //Refazer com axios 
+    
        var urlencoded = new URLSearchParams();
        urlencoded.append("title", title);
        urlencoded.append("body", body);
@@ -30,7 +30,7 @@
        
        fetch("http://localhost:3001/api/note", requestOptions)
        .then(response => response.text())
-       .then(result => console.log(result))
+       .then(result => result)
        .catch(error => error);
     },
 

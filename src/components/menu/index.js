@@ -18,6 +18,7 @@ export default ({ activesPosts, setActivePosts}) =>{
     const getNotes = async () => {
         const notesList = await api.getNotes();
         setNotes(notesList);
+      
     }
 
 
@@ -28,7 +29,7 @@ export default ({ activesPosts, setActivePosts}) =>{
 
     useEffect(() =>{
         getNotes();
-    },[])
+    },[activeModal])
    
     return (
 
@@ -57,7 +58,9 @@ export default ({ activesPosts, setActivePosts}) =>{
                         key={index} 
                         data={item} 
                         actives={activesPosts} 
-                        setActives={setActivePosts}/>
+                        setActives={setActivePosts}
+                        getNotes={getNotes}
+                        />
                     ))}
                     
                 </ItemList>

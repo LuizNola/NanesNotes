@@ -14,6 +14,8 @@ export default ({ active, setActiveModal, mode, id }) => {
 
         if (e.target.classList.contains('modalBG')) {
             setActiveModal(false)
+            setTitle('')
+            setBody('')
         }
     }
 
@@ -24,6 +26,7 @@ export default ({ active, setActiveModal, mode, id }) => {
             let json = await api.addNote(title, body);
             if(json == undefined) {
                 setActiveModal(false)
+                
             }else{
                 setError(json)
             }

@@ -5,13 +5,14 @@ import immer from 'immer'
 import { Container, Title, ButtonsImg, ButtonImg } from './styled'
 import api from '../../api'
 
-export default ({ data, actives, setActives, setMode, setActiveModal,setIdForModal }) => {
+export default ({ data, actives, setActives, setMode, setActiveModal,setIdForModal, getNotes }) => {
 
 
     const [ active, setActive ] = useState(false)
 
-    const handleClickTrash = () => {
-        api.deleteNote(data.id)
+    const handleClickTrash = async () => {
+        await api.deleteNote(data.id)
+        getNotes()
     }
 
     const handleClickContainer = () => {
